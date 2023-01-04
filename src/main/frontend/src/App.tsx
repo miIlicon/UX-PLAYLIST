@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+  const [value, setValue] = useState<string>("");
+
+  axios.get('/test')
+    .then((res) => {
+      setValue(res.data);
+    })
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +26,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>{value}</p>
       </header>
     </div>
   );

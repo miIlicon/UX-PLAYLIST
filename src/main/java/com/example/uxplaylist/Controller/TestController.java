@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
-    @GetMapping(value="/")
+    @GetMapping(value="/test")
     @CrossOrigin(origins = "http//localhost:3000")
     public String test(){
-
         return "연동테스트";
     }
 }
